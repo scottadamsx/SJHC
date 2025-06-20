@@ -1,0 +1,1156 @@
+/* --- Global Styles --- */
+:root {
+    --primary-green: #1a4d2e; /* Dark green from logo */
+    --secondary-dark: #2c3e50; /* Dark for nav/footer */
+    --accent-beige: #f4f0e7; /* Beige from poster inspiration */
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --light-grey: #f8f8f8;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+/* --- Page Wrapper for Backgrounds --- */
+.page-wrapper {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: var(--accent-beige); /* Fallback background color if image is not found */
+}
+
+/* Ensure main content and footer are visible and stack correctly */
+main {
+    position: relative;
+    z-index: 1;
+    flex-grow: 1;
+}
+
+.main-footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Specific Page Backgrounds --- */
+#home-page {
+    background-image: url('images/homepage.JPG'); /* */
+}
+
+#team-page {
+    background-image: url('images/exec_team1.JPG'); /* */
+}
+
+#sponsors-page {
+    background-image: url('images/sponsors1.JPG'); /* */
+}
+
+#upcoming-hike-page {
+    background-image: url('images/upcoming_hike.JPG'); /* */
+}
+
+#past-hikes-page {
+    /* Optional: Add a specific background image for past hikes if you have one */
+     background-image: url('images/past-hikes.JPG');
+}
+
+#what-hikes-page {
+    /* Optional: Add a specific background image for "What Hikes Can I Do?" page */
+     background-image: url('images/what_hikes_bg.JPG');
+}
+
+#contact-page {
+    background-image: url('images/contact_us.JPG'); /* */
+}
+#what-hikes-can-i-do {
+    background-image: url('images/past_hikes.JPG');
+}
+
+/* --- Header and Banner Styling --- */
+.main-header {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: relative;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    background-image: url('images/stjohns_hike_club_logo.png');
+    background-size: cover;
+    background-position: center;
+    height: 120px; /* Increased from 100px */
+    width: 120px; /* Increased from 100px */
+    margin-right: 25px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.site-title {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 3.8em;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--primary-green);
+    position: relative;
+    display: inline-block;
+}
+
+.site-title .pop-text {
+    color: var(--secondary-dark);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 15px;
+    border: 3px solid var(--primary-green);
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.15);
+    position: relative;
+    left: 15px;
+    top: -10px;
+    transform: rotate(2deg);
+    display: inline-block;
+    cursor: pointer; /* Indicate it's clickable */
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Add transitions */
+}
+
+.site-title .pop-text:hover {
+    transform: rotate(0deg) scale(1.05); /* Straighten and slightly enlarge */
+    background-color: var(--primary-green); /* Change background to green */
+    color: var(--accent-beige); /* Change text to beige */
+    border-color: var(--secondary-dark); /* Change border color */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* More pronounced shadow */
+}
+
+/* --- Navigation Bar Styling --- */
+.main-nav {
+    margin:auto;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 25px;
+    position: relative;
+}
+
+.nav-links a {
+    font-family: 'Permanent Marker', cursive; /* Already set, but confirming */
+    font-size: 1.3em;
+    color: var(--primary-green); /* Changed to dark green for better visibility */
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    font-weight: 400;
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    border: 2px solid var(--primary-green);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.85); /* More opaque background for better contrast */
+}
+
+.nav-links a:hover, .nav-links a:focus {
+    color: var(--accent-beige); /* Changed to primary green on hover */
+    background-color: var(--primary-green); /* Changed background to beige on hover */
+    transform: translateY(-2px);
+}
+
+/* Dropdown specific styles */
+.dropdown-content {
+    background-color: var(--secondary-dark);
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    border-radius: 8px;
+    overflow: hidden;
+    left: 0;
+    top: 100%;
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    font-family: 'Permanent Marker', cursive; /* Changed to Permanent Marker */
+    color: var(--accent-beige); /* Changed to beige */
+    padding: 10px 18px;
+    font-size: 1.1em; /* Slightly larger for dropdown consistency */
+    text-align: left;
+    white-space: nowrap;
+    background-color: rgba(44, 62, 80, 0.8); /* Slightly transparent background for dropdown items */
+    border-bottom: 1px solid rgba(26, 77, 46, 0.3); /* Subtle separator */
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primary-green);
+    color: var(--text-light); /* Keep text light on hover */
+    transform: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mobile Navigation Toggle (Hamburger) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--secondary-dark);
+    font-size: 2.5em;
+    cursor: pointer;
+    z-index: 200;
+}
+
+/* --- Hero Section Styling (Homepage) --- */
+.hero-section {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    margin: 50px auto;
+    max-width: 1000px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.hero-section h2 {
+    font-size: 3.5em;
+    margin-bottom: 25px;
+    line-height: 1.1;
+    color: var(--primary-green);
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    max-width: 750px;
+    margin: 0 auto 50px auto;
+    color: #444;
+}
+
+/* --- Button Styling --- */
+.btn {
+    display: inline-block;
+    padding: 16px 35px;
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: 0 12px;
+    white-space: nowrap;
+    font-size: 1.1em;
+}
+
+.primary-btn {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    border: 2px solid var(--primary-green);
+}
+
+.primary-btn:hover {
+    background-color: #113620;
+    border-color: #113620;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(26, 77, 46, 0.4);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+}
+
+.secondary-btn:hover {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* --- Page Hero Section (for inner pages like Our Team, Sponsors, Hikes) --- */
+.page-hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin:  30px auto; /* Increased top margin to push it down for contact-us */
+    max-width: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    z-index: 2;
+}
+
+.page-hero-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    color: var(--primary-green);
+}
+
+.page-hero-section p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* --- General Content Section for Consistency --- */
+.content-section {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 60px auto; /* Consistent top/bottom margin */
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Team Members Grid --- */
+.team-members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.team-member-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 380px;
+    z-index: 3;
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.member-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid var(--primary-green);
+    box-shadow: 0 0 0 6px rgba(26, 77, 46, 0.15);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.team-member-card h3 {
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--primary-green);
+}
+
+.member-title {
+    font-weight: 600;
+    color: var(--secondary-dark);
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.member-blurb {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.5;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid var(--light-grey);
+    width: 100%;
+}
+
+/* --- Sponsors Grid --- */
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.sponsor-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 380px;
+    z-index: 3;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.sponsor-logo {
+    max-width: 180px;
+    max-height: 120px;
+    object-fit: contain;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.sponsor-card h3 {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--primary-green);
+}
+
+.sponsor-blurb {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--light-grey);
+    width: 100%;
+    text-align: left;
+}
+
+.sponsor-card .btn {
+    margin-top: 25px;
+}
+
+/* --- Past Hikes List --- */
+.past-hikes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.hike-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hike-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.hike-image-placeholder {
+    flex-shrink: 0;
+    width: 280px;
+    height: 200px;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: #666;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    /* Example: background-image: url('../images/hike_signalhill.JPG'); */
+}
+
+.hike-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hike-date-overlay {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.hike-details {
+    flex-grow: 1;
+    padding: 25px 30px;
+    text-align: left;
+}
+
+.hike-details h3 {
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--primary-green);
+}
+
+.hike-location {
+    font-weight: 600;
+    color: var(--secondary-dark);
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.hike-meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.hike-description {
+    font-size: 1em;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* --- Upcoming Hike Page Specifics --- */
+.hike-details-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
+    position: relative;
+    z-index: 2;
+}
+
+.hike-info-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 40px;
+    max-width: 700px;
+    text-align: center;
+}
+
+.hike-info-card h3 {
+    font-size: 2.5em;
+    color: var(--primary-green);
+    margin-bottom: 25px;
+}
+
+.hike-info-card p,
+.hike-info-card ul {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.hike-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.hike-info-card li {
+    background-color: var(--light-grey);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.hike-info-card i {
+    margin-right: 8px;
+    color: var(--primary-green);
+}
+
+.hike-info-card .btn {
+    margin-top: 30px;
+    width: auto;
+    min-width: 200px;
+}
+
+/* --- What Hikes Can I Do? Page Specifics --- */
+.hike-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.hike-type-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    padding: 30px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hike-type-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.hike-type-card h3 {
+    font-size: 1.8em;
+    color: var(--primary-green);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.hike-type-card p {
+    font-size: 1em;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.hike-type-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hike-type-card li {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.hike-type-card li strong {
+    color: var(--secondary-dark);
+}
+
+/* --- Contact Form Styling --- */
+.contact-form-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    max-width: 600px;
+    margin: 40px auto; /* Center the form */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--secondary-dark);
+    font-size: 1.1em;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--light-grey);
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(26, 77, 46, 0.2);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px;
+}
+
+.contact-form .btn {
+    width: auto; /* Make button fit content */
+    padding: 12px 25px;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+.contact-info-section {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #333;
+}
+
+.contact-info-section h3 {
+    color: var(--primary-green);
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.contact-info-section p {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+}
+
+.contact-info-section p i {
+    margin-right: 10px;
+    color: var(--primary-green);
+}
+
+.contact-info-section a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-info-section a:hover {
+    text-decoration: underline;
+}
+
+/* --- Footer Styling --- */
+.main-footer {
+    background-color: var(--secondary-dark);
+    color: var(--text-light);
+    padding: 30px;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+/* --- Responsive Adjustments --- */
+/* For 2 columns on medium screens (tablets) */
+@media (max-width: 1024px) {
+    .team-members-grid {
+        grid-template-columns: repeat(2, minmax(280px, 1fr));
+        max-width: 700px;
+    }
+}
+
+/* Mobile navigation and general layout adjustments */
+@media (max-width: 992px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .header-left {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .site-title {
+        font-size: 2.8em;
+    }
+
+    .site-title .pop-text {
+        left: 10px;
+        top: -8px;
+        padding: 3px 10px;
+        transform: rotate(0deg);
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        color: var(--primary-green);
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        background-color: rgba(44, 62, 80, 0.95);
+        padding-top: 80px;
+        transition: right 0.4s ease-in-out;
+        z-index: 150;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    }
+
+    .main-nav.active {
+        right: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links a {
+        font-size: 1.4em;
+        color: var(--text-light);
+        padding: 15px 0;
+        /* Re-apply styles for mobile nav links if needed */
+        border: none; /* Remove border in mobile nav if desired */
+        background-color: transparent;
+        border-radius: 0;
+    }
+
+    .nav-links a:hover, .nav-links a:focus {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 0;
+    }
+
+    .dropdown .dropdown-content {
+        position: static;
+        display: none;
+        width: 100%;
+        box-shadow: none;
+        background-color: rgba(62, 94, 127, 0.9);
+        border-radius: 0;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .hero-section, .page-hero-section {
+        padding: 60px 15px;
+        margin: 30px auto;
+    }
+
+    .hero-section h2, .page-hero-section h2 {
+        font-size: 2.8em;
+    }
+
+    .hero-section p, .page-hero-section p {
+        font-size: 1.1em;
+    }
+
+    .btn {
+        padding: 14px 28px;
+        margin: 10px 0;
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .main-footer {
+        padding: 20px;
+    }
+}
+
+/* For single column on small mobile screens */
+@media (max-width: 768px) {
+    .team-members-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 40px auto;
+        padding: 0 15px;
+        max-width: 400px;
+    }
+
+    .member-photo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .team-member-card {
+        min-height: auto;
+    }
+
+    /* Responsive adjustments for sponsors grid */
+    .sponsors-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    .sponsor-card {
+        min-height: auto;
+    }
+
+    .sponsor-logo {
+        max-width: 150px;
+        max-height: 100px;
+    }
+
+    .sponsor-card h3 {
+        font-size: 1.8em;
+    }
+
+    .sponsor-blurb {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    /* Responsive adjustments for past hikes cards */
+    .hike-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hike-image-placeholder {
+        width: 100%;
+        height: 250px;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .hike-details {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .hike-details h3 {
+        font-size: 1.6em;
+    }
+
+    .hike-description {
+        font-size: 0.9em;
+    }
+
+    .hike-date-overlay {
+        bottom: auto;
+        top: 10px;
+        left: 10px;
+        right: auto;
+        padding: 5px 8px;
+    }
+
+    /* Responsive adjustments for upcoming hike */
+    .hike-info-card {
+        padding: 30px 20px;
+    }
+
+    .hike-info-card h3 {
+        font-size: 2em;
+    }
+
+    .hike-info-card ul {
+        grid-template-columns: 1fr;
+    }
+
+    /* Responsive adjustments for contact page */
+    .contact-form-container, .contact-info-section {
+        padding: 25px;
+        margin: 30px auto;
+    }
+
+    .contact-form label {
+        font-size: 1em;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+
+    .contact-info-section h3 {
+        font-size: 1.6em;
+    }
+
+    .contact-info-section p {
+        font-size: 1em;
+    }
+}
+
+/* --- New Homepage Sections Styles --- */
+/* General styling for content sections */
+.content-section {
+    max-width: 1200px;
+    margin: 60px auto; /* Consistent spacing above and below */
+    padding: 0 20px; /* Padding on the sides */
+    position: relative;
+    z-index: 2;
+    text-align: center; /* Center align content within these sections */
+}
+
+.section-title {
+    font-size: 2.5em;
+    color: var(--primary-green);
+    margin-bottom: 40px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.section-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.section-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px; /* Space below image before text on stacked layout */
+}
+
+/* Layout for Team and Sponsors sections (image + text) */
+.team-overview,
+.sponsors-overview {
+    display: flex;
+    flex-direction: column; /* Default to column stacking for small screens */
+    align-items: center; /* Center items when stacked */
+    gap: 30px; /* Space between image and text */
+    margin-bottom: 30px; /* Space below this content block */
+}
+
+/* Responsive adjustment for larger screens (e.g., tablets and desktops) */
+@media (min-width: 768px) {
+    .team-overview,
+    .sponsors-overview {
+        flex-direction: row; /* Arrange items in a row */
+        text-align: left; /* Align text to the left when in row */
+        justify-content: center; /* Center the entire row horizontally */
+    }
+    .team-overview .team-photo-container,
+    .sponsors-overview .sponsor-photo-container {
+        flex-shrink: 0; /* Don't shrink the image container */
+        width: 40%; /* Image takes 40% width */
+        max-width: 400px; /* Limit max width of the image */
+    }
+    .team-overview .team-blurb-container,
+    .sponsors-overview .sponsor-blurb-container {
+        flex-grow: 1; /* Allow text container to grow */
+        width: 60%; /* Text takes 60% width */
+        padding-left: 20px; /* Space between image and text */
+        display: flex; /* Use flex to align content within the blurb container */
+        flex-direction: column;
+        justify-content: center; /* Vertically center the text and button */
+    }
+    /* Special order for the Sponsors section (image on right, text on left) */
+    .sponsors-overview {
+        flex-direction: row-reverse; /* Reverses the order of image and text */
+    }
+    .sponsors-overview .sponsor-blurb-container {
+        padding-left: 0; /* Remove left padding */
+        padding-right: 20px; /* Add right padding */
+    }
+}
+
+
+/* New to Hiking Section Specifics */
+.hiking-guide p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 800px; /* Keep text readable width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hiking-guide ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 20px auto; /* Space around the list */
+    max-width: 800px; /* Keep list readable width */
+    text-align: left; /* Align list items to the left */
+}
+
+.hiking-guide li {
+    background-color: var(--light-grey);
+    padding: 15px 20px;
+    margin-bottom: 15px; /* Space between list items */
+    border-left: 5px solid var(--primary-green); /* Green accent bar */
+    border-radius: 8px;
+    font-size: 1.1em;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.hiking-guide li strong {
+    color: var(--secondary-dark); /* Darker text for bold parts */
+}
+
+.new-to-hiking-section .btn {
+    margin-top: 20px; /* Space above the button */
+}
+
+/* Call to Action Section Specifics */
+.call-to-action-section p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 800px; /* Keep text readable width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.call-to-action-section .btn {
+    margin-top: 30px; /* Space above the button */
+}
