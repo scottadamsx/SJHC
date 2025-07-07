@@ -1,0 +1,205 @@
+/* Global Variables */
+:root {
+    --primary-green: #1a4d2e;
+    --secondary-dark: #2c3e50;
+    --accent-beige: #f4f0e7;
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --light-grey: #f8f8f8;
+}
+
+/* Page Background */
+#upcoming-hike-page {
+    background-image: url('images/upcoming_hike.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Section Wrapper */
+.hike-details-section,
+.content-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1100px;
+}
+
+/* Card Container */
+.hike-info-card {
+    margin: 30px 0;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+}
+
+/* Card Headings */
+.hike-info-card h3 {
+    font-size: 2em;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+}
+
+/* Grid of Cards */
+.hike-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    gap: 20px;
+    list-style: none; /* Remove default UL styles */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+/* Individual Card */
+.hike-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Equal heights */
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hike-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Title & Details */
+.hike-card-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 6px;
+}
+
+.hike-card-detail {
+    font-size: 1em;
+    color: #5c3d2e; /* earthy brown */
+}
+
+/* Sponsor Logos Row */
+.hero-sponsors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 25px;
+}
+
+.sponsor-logo {
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.sponsor-logo:hover {
+    transform: scale(1.05);
+}
+
+.central-logo {
+    height: 175px; /* slightly larger for SJHC */
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin: 15px auto 0 auto;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    border: none;
+}
+
+.primary-btn:hover {
+    background-color: #113620;
+    transform: translateY(-2px);
+}
+
+/* Responsive: 2 columns on tablets, 1 on mobile */
+@media (max-width: 992px) {
+    .hike-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hike-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hike-info-card {
+        padding: 20px;
+    }
+
+    .hero-sponsors {
+        flex-direction: column;
+    }
+
+    .sponsor-logo,
+    .central-logo {
+        height: 50px;
+    }
+}
+/* Retro Announcement Style */
+.retro-announcement {
+    background-color: #f4f0e7;
+    color: var(--primary-green);
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-header {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.5em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.announcement-banner {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+.announcement-body {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 10px 0 20px 0;
+    color: var(--primary-green);
+}
+
+.announcement-subtext {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #444;
+}
